@@ -21,11 +21,11 @@
 * Cache operation management (e.g., set, get, delete)
 * Support for Redis clusters and sentinel
 * Automatic connection retries and failover
+* Support for caching strategies (e.g., least recently used, most recently used)
+* Customizable cache expiration and refresh policies
 
 ### Advanced Features
 
-* Support for caching strategies (e.g., least recently used, most recently used)
-* Customizable cache expiration and refresh policies
 * Integration with popular logging and monitoring tools
 * Extensive API documentation and examples
 
@@ -80,6 +80,7 @@
 * [1.0.0]: Initial release
 * [1.1.0]: Added support for Redis clusters and sentinel
 * [1.2.0]: Improved cache operation management and error handling
+* [1.3.0]: Added caching strategies and customizable cache policies
 
 ## API Documentation
 ### API Endpoints
@@ -88,12 +89,19 @@
 * `set`: Set a cached value
 * `delete`: Delete a cached value
 * `config`: Retrieve and set Redis configuration settings
-
-### API Methods
-
 * `connect`: Establish a Redis connection
 * `disconnect`: Close a Redis connection
 * `reconnect`: Re-establish a disconnected Redis connection
+
+### API Methods
+
+* `get(key, options)`: Retrieve a cached value
+* `set(key, value, options)`: Set a cached value
+* `delete(key, options)`: Delete a cached value
+* `config(options)`: Retrieve and set Redis configuration settings
+* `connect(options)`: Establish a Redis connection
+* `disconnect(options)`: Close a Redis connection
+* `reconnect(options)`: Re-establish a disconnected Redis connection
 
 ## Example Usage
 ### Example Code
@@ -105,6 +113,8 @@ const redisConfig = new CacheRedisConfig({
   host: 'localhost',
   port: 6379,
   database: 0,
+  cacheStrategy: 'LRU',
+  cacheExpiration: 3600,
 });
 
 redisConfig.connect();
@@ -112,7 +122,10 @@ redisConfig.connect();
 const cachedValue = await redisConfig.get('example-key');
 console.log(cachedValue);
 
-redisConfig.set('example-key', 'Hello, World!');
+redisConfig.set('example-key', 'Hello, World!', {
+  ttl: 300,
+});
+
 console.log(await redisConfig.get('example-key'));
 
 redisConfig.delete('example-key');

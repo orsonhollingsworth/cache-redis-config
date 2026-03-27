@@ -1,0 +1,83 @@
+.cache-redis-config-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.cache-redis-config-header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #333;
+}
+
+.cache-redis-config-header h2 {
+    margin: 0;
+}
+
+.cache-redis-config-form {
+    padding: 20px;
+}
+
+.cache-redis-config-form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.cache-redis-config-form input[type="text"], .cache-redis-config-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.cache-redis-config-form button[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.cache-redis-config-form button[type="submit"]:hover {
+    background-color: #444;
+}
+
+.cache-redis-config-field {
+    margin-bottom: 20px;
+}
+
+.cache-redis-config-field label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.cache-redis-config-field textarea {
+    height: 100px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.cache-redis-config-output {
+    padding: 20px;
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.cache-redis-config-output pre {
+    padding: 20px;
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    white-space: pre-wrap;
+}
